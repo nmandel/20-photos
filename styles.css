@@ -18,6 +18,7 @@ body {
   padding-top: 50px;
 }
 
+/* below code was pulled from a button style generator */
 button {
   -moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
   -webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
