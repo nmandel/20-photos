@@ -13,9 +13,18 @@ $(document).ready(function() {
   })
 
   $('#login').click(function() {
+    getPhotos();
+    $('#btn').hide();
+    // fotorama needs to be called after all of the photos are loaded in
+    setTimeout(function() {
+      $('.fotorama').fotorama();
+    }, 750);
+  });
+
+  function getPhotos () {
     console.log('connecting to fb');
     hello('facebook').login();
-    hello('facebook').api('me/photos', 'get', {limit: 20}).then(function(r) {
+    hello('facebook').api('me/photos', 'get', {limit: 20, width:1000, height: 1000}).then(function(r) {
       console.log('data', r);
       if (!r || r.error) {
         console.log('err opening photos');
@@ -26,9 +35,9 @@ $(document).ready(function() {
         return;
       }
       for (var i = 0; i < r.data.length; i++) {
-        $('#profile').append('<img src="'+ r.data[i].picture +'" />');
+        $('.fotorama').append('<img src="'+ r.data[i].source +'" />');
       }
     })
-  })
+  }
 
 })
