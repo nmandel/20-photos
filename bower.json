@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "oauth-js": "~0.4.0",
-    "hello": "~1.4.3"
+    "hello": "~1.4.3",
+    "photoswipe": "~4.0.6"
   }
 }

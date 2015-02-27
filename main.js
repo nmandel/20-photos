@@ -7,7 +7,7 @@ $(document).ready(function() {
   hello.on('auth.login', function(auth) {
     console.log('logged in with fb', auth.network);
     hello('facebook').api('/me').then(function(r) {
-      $('#profile').append('<img src="'+ r.thumbnail +'" /> Hey '+r.name);
+      $('#your-name').text('Welcome ' + r.name);
     });
     
   })
@@ -15,7 +15,7 @@ $(document).ready(function() {
   $('#login').click(function() {
     console.log('connecting to fb');
     hello('facebook').login();
-    hello('facebook').api('me/photos', 'get', {limit: 5}).then(function(r) {
+    hello('facebook').api('me/photos', 'get', {limit: 20}).then(function(r) {
       console.log('data', r);
       if (!r || r.error) {
         console.log('err opening photos');
