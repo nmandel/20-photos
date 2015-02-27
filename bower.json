@@ -1,0 +1,15 @@
+{
+  "name": "Appsheet_proj",
+  "version": "0.0.0",
+  "authors": [
+    "Nick Mandel <nrmandel@ucdavis.edu>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
